@@ -46,9 +46,6 @@ app.get('/gallery', (req, res) =>{
   })
 });
 
-app.get('/test', (req, res) =>{
-    db.query('SELECT * FROM upload', (err, result) => {
-        console.log(result);
-        res.send(`${result[0].description}`);
-    })
+app.get('/write', (req, res) =>{
+  res.render('write.ejs');
 })

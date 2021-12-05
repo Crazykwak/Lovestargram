@@ -11,9 +11,43 @@
 <body>
     <%- include('nav.html') %>
 
+
     <div>
-        <h4>test</h4>
+        <div class="Menu">
+            <li class="write_BTN">글쓰기</li>
+        </div>
+        <table>
+            <tr>
+                <td> 글 번호 </td>
+                <td> 글 제목</td>
+                <td> 작성자 </td>
+            </tr>
+            <% for(let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= data[i]._id %></td>
+                <td><%= data[i].title %></td>
+                <td><%= data[i].author %></td>
+                <td><img src="<%= data[i].img%>" alt="미리보기"></td>
+            </tr>
+            <% } %>
+        </table>
     </div>
 
+    <style>
+        table {
+            width: 100%;
+            border: 1px solid #444444;
+        }
+    </style>
+
+    <script>
+        $('.write_BTN').click((e) =>{
+            $.ajax({
+                method: 'POST',
+                url: '/write'
+            })
+        })
+
+    </script>
 </body>
 </html>
