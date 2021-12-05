@@ -40,7 +40,10 @@ app.get('/', (req, res) =>{
 });
 
 app.get('/gallery', (req, res) =>{
-    res.render('gallery.ejs');
+  db.query('SELECT * FROM upload', (err, result) => {
+    console.log(result);
+    res.render('gallery.ejs', {data : result});
+  })
 });
 
 app.get('/test', (req, res) =>{
