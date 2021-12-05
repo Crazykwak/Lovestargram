@@ -39,8 +39,8 @@ app.get('/', (req, res) =>{
     res.render('index.ejs');
 });
 
-app.get('/jiyoon', (req, res) =>{
-    res.render('jiyoon.ejs');
+app.get('/gallery', (req, res) =>{
+    res.render('gallery.ejs');
 });
 
 app.get('/test', (req, res) =>{
