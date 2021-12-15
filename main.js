@@ -49,3 +49,7 @@ app.get('/gallery', (req, res) =>{
 app.get('/write', (req, res) =>{
   res.render('write.ejs');
 });
+
+app.get('/login', (req, res) =>{
+  res.render('login.ejs');
+})
